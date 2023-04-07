@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Temperature Converter</title>
+        <link rel="stylesheet" href="css.css"/>
+        
+    </head>
+    <body>
+        <center> 
+            <h1 id="tc">Temperature Converter</h1>  
+        <div class="container">
+            <div class="cf">
+                <label for="c">Celsius</label>
+                <input type="number"  id="celsius">
+            </div>
+            <div class="cf">
+                <label for="f">Farenheit</label>
+                <input type="number"  id="fahrenheit">
+            </div>
+        </div>
+    </center>
+    <script>
+    let celsius = document.getElementById('celsius');
+let fahrenheit = document.getElementById('fahrenheit');
+    
+    celsius.oninput = function () {
+        let f = (parseFloat(celsius.value) * 9) / 5 + 32;
+        fahrenheit.value = parseFloat(f.toFixed(2));
+    }
+
+    fahrenheit.oninput = function () {
+        let c = ((parseFloat(fahrenheit.value) - 32) * 5) / 9;
+        celsius.value = parseFloat(c.toFixed(2));
+      
+    }</script>
+    </body>
+</html>
